@@ -1,0 +1,36 @@
+{
+  "name": "kuiper",
+  "version": "0.1.0",
+  "description": "Simple yet comprehensive logging library",
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "json",
+    "logs",
+    "warn",
+    "error",
+    "info"
+  ],
+  "license": "GPL-3.0",
+  "author": "devitzer",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "github.com/Devitzer/kuiper",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "preinstall": "node ./scripts/check-node-version.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "semver": "^7.7.4",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "get-root-path": "^3.0.1",
+    "picocolors": "^1.1.1"
+  }
+}
