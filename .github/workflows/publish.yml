@@ -32,5 +32,3 @@ jobs:
       - name: Publish
         run: npm publish --provenance --access public
         working-directory: ./
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
