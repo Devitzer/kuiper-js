@@ -17,7 +17,10 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "github.com/Devitzer/kuiper",
+  "repository": {
+    "type": "git",
+    "url": "github.com/Devitzer/kuiper-js"
+  },
   "engines": {
     "node": ">=16"
   },
