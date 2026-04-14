@@ -8,7 +8,7 @@ Kuiper is a comprehensive and easy to use logging library that uses distinct log
 Here is an example of the library in action:
 
 ```js
-import kuiper from "kuiper";
+import kuiper from "kuiper-js";
 
 kuiper.info("This is some information");
 kuiper.warn("This is a warning");
