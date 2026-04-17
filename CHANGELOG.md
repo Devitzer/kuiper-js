@@ -1,3 +1,15 @@
+# v0.3.0 (04/17/2026)
+
+Customizable timezone
+
+## Added
+- You can now choose a timezone for the timestamp. It will default to UTC.
+
+## Changed
+- The default config includes the new timezone options.
+- README.md has a new example with the timezone options.
+- There is now a new dependency called "luxon" used for the timezones.
+
 # v0.2.0 (04/14/2026)
 
 New configuration features

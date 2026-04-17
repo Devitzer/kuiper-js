@@ -43,6 +43,24 @@ Here is an example of the output using this config: <br>
 
 Notice that the color and timestamp is removed using this configuration.
 
+### Example 3: Using Config to Change Timezone
+Here's an example of a config that has a different timezone than UTC
+
+```js
+import kuiper from "kuiper-js";
+
+const kuiperConfig = {
+    ...kuiper.defaultConfig,
+    timestamp: {
+        timezone: "America/New_York"
+    }
+};
+
+kuiper.info("Look at my timestamp!", kuiperConfig);
+```
+Output using this config: <br>
+<span style="color: #0099ff;">[INFO 2026-01-01T12:00:00.123-04:00]:</span> Look at my timestamp!
+
 ## Minimum Node Version
 
 **Summary:**

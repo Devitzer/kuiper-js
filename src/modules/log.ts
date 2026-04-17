@@ -1,6 +1,6 @@
 import pc from "picocolors";
-import { rootPath } from "get-root-path";
 import { type KuiperConfig, defaultConfig } from "./config.js";
+import { DateTime } from "luxon";
 
 // load user config as a file
 // const userConfigMod = await import(`${rootPath}/kuiper.config.js`)
@@ -9,7 +9,7 @@ import { type KuiperConfig, defaultConfig } from "./config.js";
 export type LogLevel = "info" | "warn" | "error";
 
 export function log(message: string, level: LogLevel = "info", config: KuiperConfig = defaultConfig): void {
-    const timestamp = new Date().toISOString();
+    const timestamp = DateTime.now();
 
     // construct the prefix here
     let prefix: string = "";
@@ -28,7 +28,16 @@ export function log(message: string, level: LogLevel = "info", config: KuiperCon
 
         if (config.includeTimestamp) {
             // TODO: in the future when you can customize the timestamp format, edit this section
-            prefix += ` ${timestamp}`;
+            const updatedTimestamp = timestamp.setZone(config.timestamp.timezone);
+            if (config.timestamp.timezone) {
+                if  (updatedTimestamp.isValid == false) {
+                    // make this a warning and default to utc in the future
+                    error(`Invalid timezone provided in config: ${config.timestamp.timezone}.`, defaultConfig);
+                    process.exit(1);
+                }
+            }
+              
+            prefix += ` ${updatedTimestamp.toISO()}`;
         }
 
     prefix += "]:";

@@ -1,6 +1,6 @@
 {
   "name": "kuiper-js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple yet comprehensive logging library",
   "keywords": [
     "log",
@@ -29,11 +29,13 @@
     "preinstall": "node ./scripts/check-node-version.cjs"
   },
   "devDependencies": {
+    "@types/luxon": "^3.7.1",
     "@types/node": "^25.6.0",
     "typescript": "^6.0.2"
   },
   "dependencies": {
     "get-root-path": "^3.0.1",
+    "luxon": "^3.7.2",
     "picocolors": "^1.1.1"
   }
 }
